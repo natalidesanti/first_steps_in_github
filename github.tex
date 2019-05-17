@@ -1,0 +1,312 @@
+\documentclass[12pt,a4paper,titlepage,brazil]{article}
+\usepackage[a4paper]{geometry}
+\geometry{top=2.0cm, bottom=2.0cm, left=2cm, right=2cm}
+\usepackage{tabularx} 
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{threeparttablex}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[english]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[ttscale=.85]{libertine}
+\usepackage{libertinust1math}
+\usepackage[table]{xcolor}
+
+\begin{document}
+
+\begin{center}
+ \huge{\textbf{First steps on GitHub}}\\
+ \large{Natalí S. M. de Santi (\href{https://github.com/natalidesanti}{\texttt{@natalidesanti}})}
+\end{center}
+
+All steps below are for passionate by terminal on {\bf Linux} operational system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 1 - What is GitHub?}
+
+\begin{minipage}{0.7\textwidth}
+{\bf GitHub} is a code hosting platform for version control and collaboration using {\bf git}. It lets you and others work alone or together on projects from anywhere.
+
+{\bf Git} is a distributed version-control system for tracking changes in source code during it development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity and support for distributed non-linear workflows.\\
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+ \vspace{-0.5cm}
+ \centering    
+ \includegraphics[scale=0.22]{github-logo.png}\\
+\href{https://www.flaticon.com/authors/dave-gandy}{GitHub logo.}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 2 - Creating a GitHub account}
+
+To start your experience on {\bf GitHub} you need to make an account on:
+\url{https://github.com}. You will just need to inform your \texttt{e-mail} account, choose an \texttt{username} and create a \texttt{password}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 3 - Installing git in your computer}
+
+You need to install {\bf git} in your computer. If you are using {\bf Ubuntu} you just need to run OS and package updates:\\
+
+\texttt{\$ sudo apt-get update}\\
+
+And install {\bf git} giving the following command:\\
+
+\texttt{\$ sudo apt-get install git-core}\\
+
+You may be asked to confirm the download and installation. {\bf Git} should be installed and ready to use. If you can confirm it you can just run the {\bf git} version command:\\
+
+\texttt{\$ git -\hspace{0.01cm}-version}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 4 - Creating a repository}
+
+After creating an account you need to start a first (or new) {\bf repository} on {{\bf GitHub}. A repository is usually used to organize a {\bf project}. Repositories can contain anything your project needs: folders, files, images, videos, data sets, etc. If the project is not only your, or even if you can think to share it with anyone, it is recommended to include a \texttt{README}, i.e, a file with information about your project. You can also include a \texttt{license file} to your project.
+
+You can create your repository in the {\bf GitHub} \href{https://github.com}{site}, giving to it the following features:
+\begin{itemize}
+ \item Name: \texttt{project\_name}.
+ \item Description: ``\texttt{This project has the objective to...}''.
+ \item Privacy: \texttt{public} (anyone can see this repository, but you can choose who can commit) or \texttt{private} (you choose to see and commit to this repository).
+\end{itemize}
+ 
+Then, you need to to start a first (or new) repository giving, inside the directory, in your computer, chosen by you, the command:\\
+
+\texttt{\$ git init}\\
+
+Now you need to say who you are for your {\bf git}. Write in the terminal:\\
+
+\texttt{\$ git config -\hspace{0.01cm}-global user.email "you@example.com"}
+
+\texttt{\$ git config -\hspace{0.01cm}-global user.name "your\_name"}\\
+
+You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are the one using git on your computer. If you omit this option you are logging in only on the local folder.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 5 - Including files in your repository}
+
+You need to add the files you wish to keep your changes on {\bf git} giving the command:\\
+
+\texttt{\$ git add <filename>}\\
+
+Remember that, in other times (beyond the first one), when you are adding the changes you need to write \texttt{stage}, instead \texttt{add}, in the command above, like:\\
+
+\texttt{\$ git stage <filename>}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 6 - Committing}
+
+On {\bf GitHub}, saved changes are called {\bf commits}. Each commit has an associated {\bf commit message}, which is a description explaining why a particular change was made. Commit messages capture the history of your changes, so you and other contributors can understand what you’ve done and why.\\
+
+After adding/staging you need to commit it:\\
+
+\texttt{\$ git commit -m ``<message>''}\\
+
+You can do as many commits as you want, giving the command above and writing a message to warn you about your changes, in same documents, or about new documents added in your repository.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 7 - Uploading you files and changes into GitHub}
+
+It's time to upload your {\bf git} on {\bf GitHub}. Now you need to log in on {\bf GitHub} site, access your project and upload your {\bf git} giving the commands sequence:\\
+
+\texttt{\$ git remote add origin https://github.com/user/project\_name.git}
+
+\texttt{\$ git push -u origin master}\\
+
+{\bf GitHub} will ask for your \texttt{username} and  \texttt{password}:\\
+
+\texttt{Username for 'https://github.com': username}
+
+\texttt{Password for 'https://username@github.com': password}\\
+
+And then, you can see which files and commits were upload by you:\\
+
+\texttt{Counting objects: N, done.}
+  
+\texttt{Delta compression using up to M threads.}
+
+\texttt{Compressing objects: 100\% (N/N), done.}
+
+\texttt{Writing objects: 100\% (O/O), 1.46 KiB | 374.00 KiB/s, done.}
+
+\texttt{Total N (delta 0), reused 0 (delta 0)}
+
+\texttt{To https://github.com/username/project\_name.git}
+
+\texttt{* [new branch]      master -> master}
+
+\texttt{Branch 'master' set up to track remote branch 'master' from 'origin'.}\\
+
+The {\bf git}'s magic works in this way: you create or add some files, modify them, commit your changes and upload the files on {\bf GitHub}. But there is a lot more!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 8 - Creating a branch}
+
+Now you need to know that all that you have done above was made in the \texttt{master} branch. Ops, what I'm talking about?
+
+{\bf Branching} is the way to work on different versions of a repository at one time. By default your repository has one \texttt{branch} named {\bf master} which is considered to be the {\em definitive branch}. We use branches to experiment and make edits before committing them to \texttt{master}. In other words, in {\bf git} you can have a tree history of your code. As a tree you have not only one, but a lot of branches. In the branches you can do changes in your files, save them and use it in your \texttt{master} branch as you want.
+
+When you create a branch off the \texttt{master} branch, you’re making a copy of master as it was at that point in time. If someone else made changes to the master branch while you were working on your branch, you could {\bf pull} in those updates. But it is a story that I will tell to you in the next steps.\\
+
+First, we are going to create a branch:\\
+
+\texttt{\$ git branch name\_of\_branch}\\
+
+Second, you need to get to that branch:\\
+
+\texttt{\$ git checkout name\_of\_branch}\\
+
+Then, you can stage, commit and push files to that branch, using the same commands used right above. Just notice that, when you do your \texttt{push} you just need to change \texttt{master} by your current brunch \texttt{name\_of\_branch}:\\
+
+\texttt{\$ git push -u origin name\_of\_branch}\\
+
+You can add as many branches as you want, like direct and different branches from \texttt{main} or even branches starting in other branches. Just remember that, for each branch that you create, the files in that branch will be the same ones in the previous branch as you start your modifications and commits on it.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 9 - Merging}
+
+As I have described in the previous step, after all changes and commits in your branch, you can put the modifications in the \texttt{main} one. You just need to \texttt{merge} the main with the branch that you are using. Thus, in the main branch you can give the line command:
+
+\texttt{\$ git merge name\_of\_branch}
+
+Finally, you have the \texttt{main} branch completely changed by your other branch changes!
+
+\begin{figure}[h!]
+ \centering 
+ \includegraphics[scale=0.24]{branching.png}
+ \caption{Master branch side by side another branch in which there are many commits, pull requests and discussion before merging into the main one. This image is from \texttt{Hello Word project on GitHub's \href{https://guides.github.com/activities/hello-world/branching.png}{site}}.}
+\end{figure}
+
+Pay attention that, the command \texttt{merge}, merges the branch that you are in with the other branch you chose, i. e., you can add the changes of the chosen branch in the branch that you are in, and not just for the \texttt{main} branch and the other one desired branch.\\
+
+If you need to verify in which branch you are you can just write in the terminal:
+
+\texttt{\$ git status}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 10 - Pull Requests}
+
+{\bf Pull Requests} are the heart of collaboration on {\bf GitHub}. When you open a pull request, you’re proposing your changes and requesting that someone, really anyone, review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in {\color{green}green} and {\color{red}red} in yout {\bf GitHub}'s page.
+
+As soon as you make a commit, you can open a pull request and start a discussion, even before the code is finished.
+
+By using {\bf GitHub}’s \texttt{@mention} system in your pull request message, you can ask for feedback from specific people or teams.
+
+You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the {\bf GitHub} flow before working on larger projects.
+
+Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Basic git commands}
+
+I would like to finish this manuscript listing some basic {\bf git commands}:
+
+\begin{table}[h!]
+ \begin{center}
+  \begin{tabular}{c|c|c}
+   \cline{1-3}
+   \textbf{Git task} & \textbf{Notes} & \textbf{Git commands} \\
+   \cline{1-3}
+   Adding & ``*'' means & \texttt{git add <filename>}\\
+   files & all files & \texttt{git add *}\\
+   \cline{1-3} 
+   & Create a & \\
+   & new banch & \\
+   & and switsh & \texttt{git checkout -b name\_of\_branch}\\
+   & to it & \\
+   & or commit & \\
+   \cline{2-3}
+   & Switch from & \\
+   & one branch & \texttt{git checkout name\_of\_branch}\\
+   Branches & to another & \\    
+   \cline{2-3}
+   & List all the & \\
+   & branches in & \\
+   & your repo & \texttt{git branch} \\    
+   & and tell you & \\
+   & what branch & \\
+   & you are in & \\
+   \cline{2-3} 
+   & Delete the & \\
+   & feature & \texttt{git branch -d name\_of\_branch}\\
+   & branch & \\    
+   \cline{1-3}
+   Create a & & \\
+   new local & & \texttt{git init}\\
+   repository & & \\
+   \cline{1-3} 
+   Commit & & \texttt{git commit -m ``<message>''}\\
+   \cline{1-3} 
+   & To meerge a & \\
+   & different & \\
+   Merge & branch into & \texttt{git merge name\_of\_branch}\\
+   & your active & \\
+   & branch & \\
+   \cline{1-3} 
+   & Send changes & \\
+   & to the master & \texttt{git push origin master}\\
+   Push & branch & \\
+   \cline{2-3} 
+   & Push the & \\
+   & branch to & \texttt{git push origin name\_of\_branch}\\
+   & your repo & \\
+   \cline{1-3} 
+   & List the files & \\
+   & you've changed & \\
+   Status & and those you & \texttt{git status}\\
+   & still need to add & \\
+   & or commit & \\
+   \cline{1-3}
+  \end{tabular}
+ \end{center}
+\end{table}
+
+\begin{table}[h!]
+ \begin{center}
+  \begin{tabular}{c|c|c}
+   \cline{1-3} 
+   & Configure the & \\
+   & author name & \\
+   Tell git & and email & \texttt{git config -\hspace{0.01cm}-global user.email ``you@example.com''}\\
+   who you are & address to be & \texttt{git config -\hspace{0.01cm}-global user.name ``your\_name''}\\ 
+   & used with & \\
+   & your commits & \\
+   \cline{1-3}
+   Undo & Undo the most & \texttt{git reset HEAD$\sim$1}\\
+   & recent commit & \\
+   \cline{1-3} 
+  \end{tabular}
+ \end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acknowledgments and references}
+
+To write the \textbf{First steps on GitHub} I really appreciate the Nícolas Morazotti (\href{https://github.com/Morazotti}{\texttt{@Morazotti}} help, the \href{https://guides.github.com/activities/hello-world/}{\texttt{Hello World}} project and the Wikipedia pages for \href{https://en.wikipedia.org/wiki/GitHub}{GitHub} and \href{https://en.wikipedia.org/wiki/Git}{git}.
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
