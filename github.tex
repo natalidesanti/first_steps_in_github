@@ -68,6 +68,11 @@ You may be asked to confirm the download and installation. {\bf Git} should be i
 
 \texttt{\$ git -\hspace{0.01cm}-version}\\
 
+Mine is:\\
+
+\texttt{\$ git version 2.17.1.}\\
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Step 4 - Creating a repository}
@@ -91,7 +96,27 @@ Now you need to say who you are for your {\bf git}. Write in the terminal:\\
 
 \texttt{\$ git config -\hspace{0.01cm}-global user.name "your\_name"}\\
 
-You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are the one using git on your computer. If you omit this option you are logging in only on the local folder.
+You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are the one using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.
+
+If you want to see the user and the configuration of your {\bf git}, write in the terminal:\\
+
+\texttt{\$ nano $\sim$/.gitconfig}\\
+
+and the informations will be displayed in nano environment like:\\
+
+[\texttt{user}]\\
+  
+\quad  \texttt{email = you@example.com}\\
+  
+\quad  \texttt{name = your\_name}\\
+  
+[\texttt{user\_name}]\\
+  
+\quad  \texttt{email = you@example.com}\\
+  
+\quad  \texttt{name = your\_name}\\
+  
+Press \texttt{Ctrl + X} to quit this environment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -99,11 +124,11 @@ You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you a
 
 You need to add the files you wish to keep your changes on {\bf git} giving the command:\\
 
-\texttt{\$ git add <filename>}\\
+\texttt{\$ git add <filename> \dots <filename>}\\
 
 Remember that, in other times (beyond the first one), when you are adding the changes you need to write \texttt{stage}, instead \texttt{add}, in the command above, like:\\
 
-\texttt{\$ git stage <filename>}
+\texttt{\$ git stage <filesname> \dots <filename>}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -171,11 +196,33 @@ Second, you need to get to that branch:\\
 
 \texttt{\$ git checkout name\_of\_branch}\\
 
-Then, you can stage, commit and push files to that branch, using the same commands used right above. Just notice that, when you do your \texttt{push} you just need to change \texttt{master} by your current brunch \texttt{name\_of\_branch}:\\
+Then, you can stage, commit and push files to that branch, using the same commands used right above. You can give the same command sequence with just one command line as:\\
+
+\texttt{\$ git checkout -b name\_of\_branch}\\
+
+going creating and going right to that created branch. Just notice that, when you do your \texttt{push} you just need to change \texttt{master} by your current brunch \texttt{name\_of\_branch}:\\
 
 \texttt{\$ git push -u origin name\_of\_branch}\\
 
 You can add as many branches as you want, like direct and different branches from \texttt{main} or even branches starting in other branches. Just remember that, for each branch that you create, the files in that branch will be the same ones in the previous branch as you start your modifications and commits on it.
+
+You can see all branches of your project writting in the terminal:\\
+
+\texttt{\$ git branch}\\
+
+and the present branch that you are working in will be presented with a * at the left side as:\\
+
+\texttt{* master}\\
+
+\texttt{branch 1}\\
+
+\texttt{branch 2}\\
+
+\texttt{branch 3}\\
+
+If you want to delete some branch you just need to write:\\
+
+\texttt{\$ git branch -d name\_of\_branch}\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -193,11 +240,41 @@ Finally, you have the \texttt{main} branch completely changed by your other bran
  \caption{Master branch side by side another branch in which there are many commits, pull requests and discussion before merging into the main one. This image is from \texttt{Hello Word project on GitHub's \href{https://guides.github.com/activities/hello-world/branching.png}{site}}.}
 \end{figure}
 
-Pay attention that, the command \texttt{merge}, merges the branch that you are in with the other branch you chose, i. e., you can add the changes of the chosen branch in the branch that you are in, and not just for the \texttt{main} branch and the other one desired branch.\\
+Pay attention that, the command \texttt{merge}, merges the branch that you are in with the other branch you chose, i.e., you can add the changes of the chosen branch in the branch that you are in, and not just for the \texttt{main} branch and the other one desired branch.\\
 
-If you need to verify in which branch you are you can just write in the terminal:
+If you need to verify in which branch you are, what files were be uploaded or not and how they are in your {\bf GitHub}'s page, you can just write in the terminal:\\
 
-\texttt{\$ git status}.
+\texttt{\$ git status}\\
+
+and you will see something like:\\
+
+\texttt{On branch master}\\
+
+\texttt{Your branch is up to date with 'origin/master'.}\\
+
+\texttt{Changes not staged for commit:}\\
+
+\texttt{(use "git add <file>..." to update what will be committed)}\\
+
+\texttt{(use "git checkout -- <file>..." to discard changes in working directory)}\\
+
+\texttt{	modified:   github.aux}\\
+
+\texttt{	modified:   github.log}\\
+
+\texttt{        modified:   github.pdf}\\
+
+\texttt{        modified:   github.tex}\\
+
+\texttt{Untracked files:}\\
+
+\texttt{  (use "git add <file>..." to include in what will be committed)}\\
+
+\texttt{	README.md\~}\\
+
+\texttt{	auto/}]\\
+
+\texttt{no changes added to commit (use "git add" and/or "git commit -a")}.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -210,6 +287,36 @@ As soon as you make a commit, you can open a pull request and start a discussion
 By using {\bf GitHub}’s \texttt{@mention} system in your pull request message, you can ask for feedback from specific people or teams.
 
 You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the {\bf GitHub} flow before working on larger projects.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 11 - Forking/Cloning a repository}
+
+If you are surfing into {\bf GitHub}'s site and find a great project that you like you can {\bf fork/clone} it for you. Then, you will have this repo into your computer to run, to modify and to do whatever you want without affecting the original project. To fork/clone some repo you need to follow two steps:
+
+\subsection{Forking:}
+
+Navigate until the {\bf GitHub} project that you liked and, in the top-right corner of the page, click {\bf Fork}!
+
+\subsection{Cloning:}
+
+To be ``connected'' with that repo and receive the last atualizations of it, when the owner do some modifications, i.e., to keep your fork synced, you just need to write in the terminal:\\
+
+\texttt{\$ git clone <link>}\\
+
+as a simple example, you can clone this tutorial writing:\\
+
+\texttt{\$ git clone <https://github.com/natalidesanti/first\_steps\_on\_github>}.\\
+
+Remember to clone some repo in some location that you want into your computer.\\
+
+If you have interest to make a pull request in this repo you can give a:\\
+
+\texttt{\$ git pull}\\
+
+to see the last alterations into this repo before proceed to make your pull request!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
 
@@ -302,7 +409,7 @@ I would like to finish this manuscript listing some basic {\bf git commands}:
 
 \section{Acknowledgments and references}
 
-To write the \textbf{First steps on GitHub} I really appreciate the Nícolas Morazotti (\href{https://github.com/Morazotti}{\texttt{@Morazotti}}) help, the \href{https://guides.github.com/activities/hello-world/}{\texttt{Hello World}} project and the Wikipedia pages for \href{https://en.wikipedia.org/wiki/GitHub}{GitHub} and \href{https://en.wikipedia.org/wiki/Git}{git}.
+To write the \textbf{First steps on GitHub} I really appreciate the Nícolas Morazotti (\href{https://github.com/Morazotti}{\texttt{@Morazotti}}) help, Patricia Novais (\href{https://github.com/pnovais}{\texttt{@pnovais}}) tutorial, the \href{https://guides.github.com/activities/hello-world/}{\texttt{Hello World}} project and the Wikipedia pages for \href{https://en.wikipedia.org/wiki/GitHub}{GitHub} and \href{https://en.wikipedia.org/wiki/Git}{git}.
 
 \end{document}
 
