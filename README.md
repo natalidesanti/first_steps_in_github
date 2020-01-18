@@ -1,6 +1,6 @@
-# First steps on GitHub
+# First steps in GitHub
 
-**First steps** on GitHub is a LaTeX project for anyone who wants to start to use GitHub, especially turned to _Linux/Ubuntu_ users. It's not a complete guide, and has no intention to be one.
+**First steps** in GitHub is a LaTeX project for anyone who wants to start to use GitHub, especially turned to _Linux/Ubuntu_ users. It's not a complete guide, and has no intention to be one.
 
 ## Installation and usage
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.16)  14 OCT 2019 10:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.16)  17 JAN 2020 22:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1675,7 +1675,7 @@ are/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineMT.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on github.pdf (9 pages, 450692 bytes).
+Output written on github.pdf (9 pages, 450680 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams
