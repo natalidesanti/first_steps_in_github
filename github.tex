@@ -23,7 +23,7 @@
 \begin{document}
 
 \begin{center}
- \huge{\textbf{First steps in GitHub}}\\
+ \huge{\textbf{First steps on GitHub}}\\
  \large{Natalí S. M. de Santi (\href{https://github.com/natalidesanti}{\texttt{@natalidesanti}})}
 \end{center}
 
@@ -70,8 +70,7 @@ You may be asked to confirm the download and installation. {\bf Git} should be i
 
 Mine is:\\
 
-\texttt{\$ git version 2.17.1.}\\
-
+\texttt{\$ git version 2.17.1}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -92,30 +91,30 @@ Then, you need to to start a first (or new) repository giving, inside the direct
 
 Now you need to say who you are for your {\bf git}. Write in the terminal:\\
 
-\texttt{\$ git config -\hspace{0.01cm}-global user.email "you@example.com"}
+\texttt{\$ git config -\hspace{0.01cm}-global user.email <you@example.com>}
 
-\texttt{\$ git config -\hspace{0.01cm}-global user.name "your\_name"}\\
+\texttt{\$ git config -\hspace{0.01cm}-global user.name <your\_name>}\\
 
-You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are the one using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.
+You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.
 
 If you want to see the user and the configuration of your {\bf git}, write in the terminal:\\
 
-\texttt{\$ nano $\sim$/.gitconfig}\\
+\texttt{\$ nano \~\/.gitconfig}\\
 
-and the informations will be displayed in nano environment like:\\
+and the information will be displayed in nano environment like:\\
 
-[\texttt{user}]\\
-  
-\quad  \texttt{email = you@example.com}\\
-  
-\quad  \texttt{name = your\_name}\\
-  
-[\texttt{user\_name}]\\
-  
-\quad  \texttt{email = you@example.com}\\
-  
-\quad  \texttt{name = your\_name}\\
-  
+\texttt{[user]}\\
+
+\hspace{0.5cm}\texttt{email = you@example.com}\\
+
+\hspace{0.5cm}\texttt{name = your\_name}\\
+
+\texttt{[user\_name]}\\
+
+\hspace{0.5cm}\texttt{email = you@example.com}\\
+
+\hspace{0.5cm}\texttt{name = your\_name}\\
+
 Press \texttt{Ctrl + X} to quit this environment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,11 +123,11 @@ Press \texttt{Ctrl + X} to quit this environment.
 
 You need to add the files you wish to keep your changes on {\bf git} giving the command:\\
 
-\texttt{\$ git add <filename> \dots <filename>}\\
+\texttt{\$ git add <file\_name>}\\
 
 Remember that, in other times (beyond the first one), when you are adding the changes you need to write \texttt{stage}, instead \texttt{add}, in the command above, like:\\
 
-\texttt{\$ git stage <filesname> \dots <filename>}
+\texttt{\$ git stage <file\_name>}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -190,29 +189,25 @@ When you create a branch off the \texttt{master} branch, you’re making a copy 
 
 First, we are going to create a branch:\\
 
-\texttt{\$ git branch name\_of\_branch}\\
+\texttt{\$ git branch <name\_of\_branch>}\\
 
 Second, you need to get to that branch:\\
 
-\texttt{\$ git checkout name\_of\_branch}\\
+\texttt{\$ git checkout <name\_of\_branch>}\\
 
-Then, you can stage, commit and push files to that branch, using the same commands used right above. You can give the same command sequence with just one command line as:\\
+Then, you can stage, commit and push files to that branch, using the same commands used right above. Just notice that, when you do your \texttt{push} you just need to change \texttt{master} by your current brunch \texttt{name\_of\_branch}:\\
 
-\texttt{\$ git checkout -b name\_of\_branch}\\
-
-going creating and going right to that created branch. Just notice that, when you do your \texttt{push} you just need to change \texttt{master} by your current brunch \texttt{name\_of\_branch}:\\
-
-\texttt{\$ git push -u origin name\_of\_branch}\\
+\texttt{\$ git push -u origin <name\_of\_branch>}\\
 
 You can add as many branches as you want, like direct and different branches from \texttt{main} or even branches starting in other branches. Just remember that, for each branch that you create, the files in that branch will be the same ones in the previous branch as you start your modifications and commits on it.
 
-You can see all branches of your project writting in the terminal:\\
+You can see all branches of your project writing in the terminal:\\
 
 \texttt{\$ git branch}\\
 
-and the present branch that you are working in will be presented with a * at the left side as:\\
+and the present branch that you are working in will be presented with a \* at the left side as:
 
-\texttt{* master}\\
+\texttt{\* master}\\
 
 \texttt{branch 1}\\
 
@@ -222,7 +217,7 @@ and the present branch that you are working in will be presented with a * at the
 
 If you want to delete some branch you just need to write:\\
 
-\texttt{\$ git branch -d name\_of\_branch}\\
+\texttt{\$ git branch -d <name\_of\_branch>.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -240,41 +235,11 @@ Finally, you have the \texttt{main} branch completely changed by your other bran
  \caption{Master branch side by side another branch in which there are many commits, pull requests and discussion before merging into the main one. This image is from \texttt{Hello Word project on GitHub's \href{https://guides.github.com/activities/hello-world/branching.png}{site}}.}
 \end{figure}
 
-Pay attention that, the command \texttt{merge}, merges the branch that you are in with the other branch you chose, i.e., you can add the changes of the chosen branch in the branch that you are in, and not just for the \texttt{main} branch and the other one desired branch.\\
+Pay attention that, the command \texttt{merge}, merges the branch that you are in with the other branch you chose, i. e., you can add the changes of the chosen branch in the branch that you are in, and not just for the \texttt{main} branch and the other one desired branch.\\
 
-If you need to verify in which branch you are, what files were be uploaded or not and how they are in your {\bf GitHub}'s page, you can just write in the terminal:\\
+If you need to verify in which branch you are, what files were be uploaded or not and how they are in your {\bf GitHub}'s page, you can just write in the terminal:
 
-\texttt{\$ git status}\\
-
-and you will see something like:\\
-
-\texttt{On branch master}\\
-
-\texttt{Your branch is up to date with 'origin/master'.}\\
-
-\texttt{Changes not staged for commit:}\\
-
-\texttt{(use "git add <file>..." to update what will be committed)}\\
-
-\texttt{(use "git checkout -- <file>..." to discard changes in working directory)}\\
-
-\texttt{	modified:   github.aux}\\
-
-\texttt{	modified:   github.log}\\
-
-\texttt{        modified:   github.pdf}\\
-
-\texttt{        modified:   github.tex}\\
-
-\texttt{Untracked files:}\\
-
-\texttt{  (use "git add <file>..." to include in what will be committed)}\\
-
-\texttt{	README.md\~}\\
-
-\texttt{	auto/}]\\
-
-\texttt{no changes added to commit (use "git add" and/or "git commit -a")}.\\
+\texttt{\$ git status}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -288,9 +253,71 @@ By using {\bf GitHub}’s \texttt{@mention} system in your pull request message,
 
 You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the {\bf GitHub} flow before working on larger projects.
 
+Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 11 - Forking/Cloning a repository}
+\section{Step 11 - Changing}
+
+If you are using {\bf git} you certainly will do changes in your project. Then, you can use the following commands:
+
+\begin{itemize}
+ \item To show the differences in file that are not realized yet:\\
+   \texttt{\$ git diff};
+ \item To show the differences in staged files and its last versions:\\
+   \texttt{\$ git diff -\hspace{0.01cm}-staged};
+ \item Unselect the file, preserving its content:\\
+   \texttt{\$ git reset <file\_name>};
+ \item To remove the file:\\
+   \texttt{\$ git rm <file\_name>};
+ \item To remove the file, preserving it locally:\\
+   \texttt{\$ git rm -\hspace{0.01cm}-cached <file\_name>};
+ \item To change the file name and to select it to a new commit:\\
+   \texttt{\$ git mv <original\_file\_name> <new\_file\_name>};
+ \item Undo all commits after the specified commit, keeping the local changes:\\
+   \texttt{\$ git reset <commit>};   
+ \item Discards every history and changes for the specified commit:\\
+   \texttt{\$ git reset -\hspace{0.01cm}-hard <commit>}.   
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 12 - Saving fragments}
+
+You can still save and restoring incomplete changes using:
+
+\begin{itemize}
+ \item Keeps, temporally, all modified files:\\
+   \texttt{\$ git stash};
+ \item Restores all recent files that have been stashed:\\
+   \texttt{\$ git stash pop};
+ \item List all changes in stash:\\
+   \texttt{\$ git stash list};
+ \item Discards every recent settle of changes in stash:\\
+   \texttt{\$ git stash drop}.
+\end{itemize}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 13 - Reviewing history}
+
+You can make a review of the evolution of all files in some {\bf git} project using:
+
+\begin{itemize}
+ \item List the versions history in the local branch:\\
+   \texttt{\$ git log};
+ \item List the history versions for specific file, including name alterations:\\
+   \texttt{\$ git log -\hspace{0.01cm}-follow <file\_name>};
+ \item Show the differences between the content among two branches:\\
+   \texttt{\$ git diff <first\_branch> \dots <second\_branch>};
+ \item Show the changes in the metadata and content for the specif commit:\\
+   \texttt{\$ git show <commit>}.
+\end{itemize}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 14 - Forking/Cloning a repository}
 
 If you are surfing into {\bf GitHub}'s site and find a great project that you like you can {\bf fork/clone} it for you. Then, you will have this repo into your computer to run, to modify and to do whatever you want without affecting the original project. To fork/clone some repo you need to follow two steps:
 
@@ -300,11 +327,11 @@ Navigate until the {\bf GitHub} project that you liked and, in the top-right cor
 
 \subsection{Cloning:}
 
-To be ``connected'' with that repo and receive the last atualizations of it, when the owner do some modifications, i.e., to keep your fork synced, you just need to write in the terminal:\\
+To be ``connected'' with that repo and receive the last actualization's of it, when the owner do some modifications, i.e., to keep your fork synced, you just need to write in the terminal:\\
 
-\texttt{\$ git clone <link>}\\
+\texttt{\$ git clone <link>}.\\
 
-as a simple example, you can clone this tutorial writing:\\
+This command do the download of the project with its complete historic version. As a simple example, you can clone this tutorial writing:\\
 
 \texttt{\$ git clone <https://github.com/natalidesanti/first\_steps\_on\_github>}.\\
 
@@ -318,10 +345,6 @@ to see the last alterations into this repo before proceed to make your pull requ
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Basic git commands}
 
 I would like to finish this manuscript listing some basic {\bf git commands}:
@@ -332,7 +355,7 @@ I would like to finish this manuscript listing some basic {\bf git commands}:
    \cline{1-3}
    \textbf{Git task} & \textbf{Notes} & \textbf{Git commands} \\
    \cline{1-3}
-   Adding & ``*'' means & \texttt{git add <filename>}\\
+   Adding & ``*'' means & \texttt{git add <file\_name>}\\
    files & all files & \texttt{git add *}\\
    \cline{1-3} 
    & Create a & \\
@@ -353,7 +376,7 @@ I would like to finish this manuscript listing some basic {\bf git commands}:
    & you are in & \\
    \cline{2-3} 
    & Delete the & \\
-   & feature & \texttt{git branch -d name\_of\_branch}\\
+   & specific & \texttt{git branch -d name\_of\_branch}\\
    & branch & \\    
    \cline{1-3}
    Create a & & \\
@@ -392,8 +415,8 @@ I would like to finish this manuscript listing some basic {\bf git commands}:
    \cline{1-3} 
    & Configure the & \\
    & author name & \\
-   Tell git & and email & \texttt{git config -\hspace{0.01cm}-global user.email ``you@example.com''}\\
-   who you are & address to be & \texttt{git config -\hspace{0.01cm}-global user.name ``your\_name''}\\ 
+   Tell git & and email & \texttt{git config -\hspace{0.01cm}-global user.email <you@example.com>}\\
+   who you are & address to be & \texttt{git config -\hspace{0.01cm}-global user.name <your\_name>}\\ 
    & used with & \\
    & your commits & \\
    \cline{1-3}
@@ -409,7 +432,7 @@ I would like to finish this manuscript listing some basic {\bf git commands}:
 
 \section{Acknowledgments and references}
 
-To write the \textbf{First steps in GitHub} I really appreciate the Nícolas Morazotti (\href{https://github.com/Morazotti}{\texttt{@Morazotti}}) help, Patricia Novais (\href{https://github.com/pnovais}{\texttt{@pnovais}}) tutorial, the \href{https://guides.github.com/activities/hello-world/}{\texttt{Hello World}} project and the Wikipedia pages for \href{https://en.wikipedia.org/wiki/GitHub}{GitHub} and \href{https://en.wikipedia.org/wiki/Git}{git}.
+To write the \textbf{First steps on GitHub} I really appreciate the Nícolas Morazotti (\href{https://github.com/Morazotti}{\texttt{@Morazotti}} help, Patricia Novais (\href{https://github.com/pnovais}{\texttt{@pnovais}}) tutorial, the \href{https://guides.github.com/activities/hello-world/}{\texttt{Hello World}} project and the Wikipedia pages for \href{https://en.wikipedia.org/wiki/GitHub}{GitHub} and \href{https://en.wikipedia.org/wiki/Git}{git}.
 
 \end{document}
 
