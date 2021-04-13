@@ -50,7 +50,7 @@ All steps below are for passionate by terminal on {\bf Linux} operational system
 \section{Step 2 - Creating a GitHub account}
 
 To start your experience on {\bf GitHub} you need to make an account on:
-\url{https://github.com}. You will just need to inform your \texttt{e-mail} account, choose an \texttt{username} and create a \texttt{password}.
+\url{https://github.com}. You will just need to inform your \texttt{e-mail} account, choose an \texttt{username} and create a \texttt{password}. Now, instead of using your password to do your git things, you will need to use your \texttt{token}. The instructions to do this are available in the \href{https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token}{page}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -70,21 +70,26 @@ You may be asked to confirm the download and installation. {\bf Git} should be i
 
 Mine is:\\
 
-\texttt{\$ git version 2.17.1}.
+\texttt{\$ git version 2.25.1}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Step 4 - Creating a repository}
 
-After creating an account you need to start a first (or new) {\bf repository} on {{\bf GitHub}. A repository is usually used to organize a {\bf project}. Repositories can contain anything your project needs: folders, files, images, videos, data sets, etc. If the project is not only your, or even if you can think to share it with anyone, it is recommended to include a \texttt{README}, i.e, a file with information about your project. You can also include a \texttt{license file} to your project.
+After creating an account you need to start a first (or new) {\bf repository} on {{\bf GitHub}. A repository is usually used to organize a {\bf project}. Repositories can contain anything your project needs: folders, files, images, videos, data sets, etc.
 
 You can create your repository in the {\bf GitHub} \href{https://github.com}{site}, giving to it the following features:
 \begin{itemize}
  \item Name: \texttt{project\_name}.
  \item Description: ``\texttt{This project has the objective to...}''.
- \item Privacy: \texttt{public} (anyone can see this repository, but you can choose who can commit) or \texttt{private} (you choose to see and commit to this repository).
+ \item Privacy: \texttt{public} (anyone can see this repository, but you can choose who can commit) or \texttt{private} (you choose to see and commit to this repository);
+ \item README;
+ \item LICENSE;
 \end{itemize}
- 
+The last two options are really usefull if the project is not only yours, or even if you want to share it with anyone else. I prefer alway create this things after, because then you will end up in a page that gives you the {\bf link} (and some instructions) of your project, that you will use in your computer, to indicates where it will be online! But, as the link is the same as the project one, fell free to create these files whatever time that you want.
+
+Just to know, the \texttt{README}, i.e, a file with information about your project, which is written in \texttt{markdown}. The \texttt{license} gives the rights about what other people can do or not with your work. Some directions about what license chose can be found in the \href{https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project}{page} and the instructions to add one in your repo is \href{https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository}{here}.
+
 Then, you need to to start a first (or new) repository giving, inside the directory, in your computer, chosen by you, the command:\\
 
 \texttt{\$ git init}\\
@@ -95,13 +100,9 @@ Now you need to say who you are for your {\bf git}. Write in the terminal:\\
 
 \texttt{\$ git config -\hspace{0.01cm}-global user.name <your\_name>}\\
 
-You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.
+You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.\\
 
-If you want to see the user and the configuration of your {\bf git}, write in the terminal:\\
-
-\texttt{\$ nano \~\/.gitconfig}\\
-
-and the information will be displayed in nano environment like:\\
+If you want to see the user and the configuration of your {\bf git}, acess the file \texttt{\~\/.gitconfig} and the information will be like:\\
 
 \texttt{[user]}\\
 
@@ -109,19 +110,11 @@ and the information will be displayed in nano environment like:\\
 
 \hspace{0.5cm}\texttt{name = your\_name}\\
 
-\texttt{[user\_name]}\\
-
-\hspace{0.5cm}\texttt{email = you@example.com}\\
-
-\hspace{0.5cm}\texttt{name = your\_name}\\
-
-Press \texttt{Ctrl + X} to quit this environment.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Step 5 - Including files in your repository}
 
-You need to add the files you wish to keep your changes on {\bf git} giving the command:\\
+You need to add the files that you wish to keep your changes on {\bf git}, giving the command:\\
 
 \texttt{\$ git add <file\_name>}\\
 
@@ -133,7 +126,7 @@ Remember that, in other times (beyond the first one), when you are adding the ch
 
 \section{Step 6 - Committing}
 
-On {\bf GitHub}, saved changes are called {\bf commits}. Each commit has an associated {\bf commit message}, which is a description explaining why a particular change was made. Commit messages capture the history of your changes, so you and other contributors can understand what you’ve done and why.\\
+On {\bf GitHub}, saved changes are called {\bf commits}. Each commit has an associated {\bf commit message}, which is a description explaining why a particular change was made. Commit messages captures the history of your changes, so you and other contributors can understand what you’ve done and why.\\
 
 After adding/staging you need to commit it:\\
 
@@ -143,7 +136,7 @@ You can do as many commits as you want, giving the command above and writing a m
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 7 - Uploading you files and changes into GitHub}
+\section{Step 7 - Uploading your files and changes to GitHub}
 
 It's time to upload your {\bf git} on {\bf GitHub}. Now you need to log in on {\bf GitHub} site, access your project and upload your {\bf git} giving the commands sequence:\\
 
@@ -151,7 +144,7 @@ It's time to upload your {\bf git} on {\bf GitHub}. Now you need to log in on {\
 
 \texttt{\$ git push -u origin master}\\
 
-{\bf GitHub} will ask for your \texttt{username} and  \texttt{password}:\\
+{\bf GitHub} will ask for your \texttt{username} and  \texttt{password}\footnote{Remember to use your \texttt{token} instead your \texttt{password}!}:\\
 
 \texttt{Username for 'https://github.com': username}
 
@@ -179,7 +172,11 @@ The {\bf git}'s magic works in this way: you create or add some files, modify th
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 8 - Creating a branch}
+\section{Step 8 - Not uploading some files and changes to GitHub}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Step 9 - Creating a branch}
 
 Now you need to know that all that you have done above was made in the \texttt{master} branch. Ops, what I'm talking about?
 
@@ -221,7 +218,7 @@ If you want to delete some branch you just need to write:\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 9 - Merging}
+\section{Step 10 - Merging}
 
 As I have described in the previous step, after all changes and commits in your branch, you can put the modifications in the \texttt{main} one. You just need to \texttt{merge} the main with the branch that you are using. Thus, in the main branch you can give the line command:
 
@@ -243,7 +240,7 @@ If you need to verify in which branch you are, what files were be uploaded or no
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 10 - Pull Requests}
+\section{Step 11 - Pull Requests}
 
 {\bf Pull Requests} are the heart of collaboration on {\bf GitHub}. When you open a pull request, you’re proposing your changes and requesting that someone, really anyone, review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in {\color{green}green} and {\color{red}red} in your {\bf GitHub}'s page.
 
@@ -257,7 +254,7 @@ Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 11 - Changing}
+\section{Step 12 - Changing}
 
 If you are using {\bf git} you certainly will do changes in your project. Then, you can use the following commands:
 
@@ -282,7 +279,7 @@ If you are using {\bf git} you certainly will do changes in your project. Then, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 12 - Saving fragments}
+\section{Step 13 - Saving fragments}
 
 You can still save and restoring incomplete changes using:
 
@@ -299,7 +296,7 @@ You can still save and restoring incomplete changes using:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 13 - Reviewing history}
+\section{Step 14 - Reviewing history}
 
 You can make a review of the evolution of all files in some {\bf git} project using:
 
@@ -317,7 +314,7 @@ You can make a review of the evolution of all files in some {\bf git} project us
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Step 14 - Forking/Cloning a repository}
+\section{Step 15 - Forking/Cloning a repository}
 
 If you are surfing into {\bf GitHub}'s site and find a great project that you like you can {\bf fork/clone} it for you. Then, you will have this repo into your computer to run, to modify and to do whatever you want without affecting the original project. To fork/clone some repo you need to follow two steps:
 
