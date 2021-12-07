@@ -17,7 +17,8 @@ pdflatex github.tex
 ```
 
 Then, you have your version of `github.pdf`!
-## Usage
+
+_OBSERVATION:_ there is a notebook file (in `markdown`), with an older version of this tutorial in this project as well, but, it is not updated. I used this notebook in a blog publication.
 
 ## Contributing
 Pull requests are welcome!
