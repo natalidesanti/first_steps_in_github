@@ -86,7 +86,7 @@ You can create your repository in the {\bf GitHub} \href{https://github.com}{sit
  \item README;
  \item LICENSE;
 \end{itemize}
-The last two options are really usefull if the project is not only yours, or even if you want to share it with anyone else. I prefer alway create this things after, because then you will end up in a page that gives you the {\bf link} (and some instructions) of your project, that you will use in your computer, to indicates where it will be online! But, as the link is the same as the project one, fell free to create these files whatever time that you want.
+The last two options are really useful if the project is not only yours, or even if you want to share it with anyone else. I prefer always create this things after, because then you will end up in a page that gives you the {\bf link} (and some instructions) of your project, that you will use in your computer, to indicates where it will be online! But, as the link is the same as the project one, fell free to create these files whatever time that you want.
 
 Just to know, the \texttt{README}, i.e, a file with information about your project, which is written in \texttt{markdown}. The \texttt{license} gives the rights about what other people can do or not with your work. Some directions about what license chose can be found in the \href{https://opensource.guide/legal/#which-open-source-license-is-appropriate-for-my-project}{page} and the instructions to add one in your repo is \href{https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository}{here}.
 
@@ -102,7 +102,7 @@ Now you need to say who you are for your {\bf git}. Write in the terminal:\\
 
 You need to pay attention that \texttt{-\hspace{0.01cm}-global} means that you are using {\bf git} on your computer. If you omit this option you are logging in only on the local folder.\\
 
-If you want to see the user and the configuration of your {\bf git}, acess the file \texttt{\~\/.gitconfig} and the information will be like:\\
+If you want to see the user and the configuration of your {\bf git}, access the file \texttt{\~\/.gitconfig} and the information will be like:\\
 
 \texttt{[user]}\\
 
@@ -174,9 +174,9 @@ The {\bf git}'s magic works in this way: you create or add some files, modify th
 
 \section{Step 8 - Not uploading some files and changes to GitHub}
 
-Sometimes you want to hide some files, i.e., files that are not important/necessary for the whole project. Then, you just need to creat a {\bf .gitignore} file, specifying the files that you want to ignore. Here you have two options, create this file before everything, if you already know the files that you do not want or create this file after some time. If you are in the former situation, you just need to write in the terminal:\\
+Sometimes you want to hide some files, i.e., files that are not important/necessary for the whole project. Then, you just need to create a {\bf .gitignore} file, specifying the files that you want to ignore. Here you have two options, create this file before everything, if you already know the files that you do not want or create this file after some time. If you are in the former situation, you just need to write in the terminal:\\
 
-\texttt{\$ touch .gitignote}\\
+\texttt{\$ touch .gitignore}\\
 
 Open it in your favorite text editor and specify the files. For instance:\\
 
@@ -186,7 +186,7 @@ Open it in your favorite text editor and specify the files. For instance:\\
 
 \texttt{*.out}\\
 
-If you are in the ``else'' case, before writting anything in your {\bf .gitignore} file, please, delete the files from your git using:\\
+If you are in the ``else'' case, before writing anything in your {\bf .gitignore} file, please, delete the files from your git using:\\
 
 \texttt{\$ git rm file\_name.extension}\\
 
@@ -352,11 +352,15 @@ This command do the download of the project with its complete historic version. 
 
 Remember to clone some repo in some location that you want into your computer.\\
 
-If you have interest to make a pull request in this repo you can give a:\\
+If you have interest to make a pull request in this repo you can give:\\
 
 \texttt{\$ git pull}\\
 
-to see the last alterations into this repo before proceed to make your pull request!
+to see the last alterations into this repo before proceed to make your pull request!\\
+
+If you want to clone a specific branch the command line is:\\
+
+\texttt{\$ git clone -\hspace{0.05cm}-branch <branchname> <remote-repo-url>}\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
