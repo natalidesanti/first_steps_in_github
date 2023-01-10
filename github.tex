@@ -260,15 +260,47 @@ If you need to verify in which branch you are, what files were be uploaded or no
 
 \section{Step 11 - Pull Requests}
 
-{\bf Pull Requests} are the heart of collaboration on {\bf GitHub}. When you open a pull request, you’re proposing your changes and requesting that someone, really anyone, review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in {\color{green}green} and {\color{red}red} in your {\bf GitHub}'s page.
+{\bf Pull Requests} are the heart of collaboration on {\bf GitHub}. When you open a pull request, you're
+proposing your changes and requesting that someone, really anyone, review and pull in your contribution
+and merge them into their branch. Pull requests show diffs, or differences, of the content from both
+branches. The changes, additions, and subtractions are shown in {\color{green}green} and
+{\color{red}red} in your {\bf GitHub}'s page.
 
 As soon as you make a commit, you can open a pull request and start a discussion, even before the code is finished.
 
 By using {\bf GitHub}’s \texttt{@mention} system in your pull request message, you can ask for feedback from specific people or teams.
 
-You can even open pull requests in your own repository and merge them yourself. It’s a great way to learn the {\bf GitHub} flow before working on larger projects.
+You can even open pull requests in your own repository and merge them yourself. It's a great way to learn the {\bf GitHub} flow before working on larger projects.
 
-Again, there is a lot of other things to do on {\bf git} and {\bf GitHub}.
+%%%
+\subsection{Steps}
+
+To create a pull request in other's repo, follow:
+
+\begin{enumerate}
+ \item {\bf Fork} the repo;
+ \item {\bf Clone} the repo;
+ \item {\bf Create a new branch} with the contributions;
+ \item {\bf Go to} the new branch;
+ \item {\bf Modify/include} new files;
+ \item {\bf Commit} your changes;
+ \item {\bf Push} changes:\\
+   \texttt{\$ git push --set-upstream origin name\_of\_the\_branch}\\
+ \item {\bf Verify} if it is everything all right:\\  
+   \texttt{\$ git remote -v}\\
+ A \texttt{fetch} and a \texttt{push} lines will appear;
+ \item {\bf Specify a new remote upstream repository} to sync with the fork. This will be the original repository that we forked from:\\
+   \texttt{\$ git remote add upstream https://github.com/original-owner-username/original-repository.git}\\
+ \item We can verify that our remote pointer to the upstream repository was properly added by using the git remote -v command again from the repository directory and the output should be origin and upstream with fecth and push;
+ \item {\bf Sync the fork} using:\\
+   \texttt{\$ git fetch upstream}\\
+ \item {\bf Switch} to the local main branch of our repository:\\
+   \texttt{\$ git checkout main}\\
+ \item {\bf Merge} any changes that were made in the original repository's main branch, that we will
+   access through our local upstream/main branch, with our local main branch:\\
+   \texttt{\$ git merge upstream/main}\\
+ \item {\bf Create pull request} going into your forked repo and pressing \texttt{new pull request}. You should add a title and a comment and press in the \texttt{create pull request}. At this point, the maintainers of the original repository will decide whether or not to accept your pull request.  
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
